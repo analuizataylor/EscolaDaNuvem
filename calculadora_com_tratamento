@@ -1,0 +1,32 @@
+while True:
+    try:
+        # Solicita a entrada dos números e da operação
+        num1 = float(input("Digite o primeiro número: "))
+        operacao = input("Digite a operação (+, -, *, /): ")
+        num2 = float(input("Digite o segundo número: "))
+
+        # Realiza a operação com base na entrada
+        if operacao == '+':
+            resultado = num1 + num2
+        elif operacao == '-':
+            resultado = num1 - num2
+        elif operacao == '*':
+            resultado = num1 * num2
+        elif operacao == '/':
+            if num2 == 0:
+                # Trata o erro de divisão por zero
+                print("Erro: Divisão por zero não é permitida.")
+                continue  # Volta para o início do loop
+            resultado = num1 / num2
+        else:
+            # Trata a operação inválida
+            print("Erro: Operação inválida. Use +, -, * ou /.")
+            continue  # Volta para o início do loop
+
+        # Exibe o resultado e encerra o programa
+        print(f"O resultado é: {resultado}")
+        break  # Sai do loop
+
+    except ValueError:
+        # Trata o erro de entrada não numérica
+        print("Erro: Entrada inválida. Por favor, digite apenas números.")
